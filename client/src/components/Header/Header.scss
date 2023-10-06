@@ -1,0 +1,94 @@
+@import "../../css-config/mixins.scss";
+.main-container {
+    width: 100%;
+    padding: 0 20px;
+    background-color: #212121;
+    z-index: 99;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    @include md {
+        height: 80px;
+    }
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    @include md {
+        padding:  40px 0;
+    }
+}
+.left {
+    display: none;
+    gap: 20px;
+    @include sm {
+        display: flex;
+    }
+    li {
+        list-style-type: none;
+        font-size: 17px;
+        font-weight: 700;
+        cursor: pointer;
+        text-transform: uppercase;
+        @include md {
+            font-size: 20px;
+        }
+    }
+}
+
+.center {
+    cursor: pointer;
+    background-color: #fbafaf;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 12px;
+    @include md {
+        font-size: 20px;
+        padding: 10px;
+        // position: absolute;
+    }
+}
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    svg {
+        font-size: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        @include md {
+            font-size: 30px;
+        }
+    }
+    .cart-icon {
+        position: relative;
+        span {
+            position: absolute;
+            top: -5px;
+            text-align: center;
+            min-width: 20px;
+            font-size: 12px;
+            right: -12px;
+            line-height: 1;
+            background-color: #8e2de2;
+            border-radius: 10px;
+            padding: 2px;
+        }
+    }
+}
+&.sticky-header {
+    position: sticky;
+    top: 0;
+    animation: stickyheaders 0.3s ease forwards;
+}
+}
+@keyframes stickyheaders {
+    0% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

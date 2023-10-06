@@ -1,0 +1,77 @@
+@import "../../../css-config/mixins.scss";
+.newsLetter-section {
+    height: 50vh;
+    width: 100%;
+    background-color: #fff;
+    background-image: url(../../../assets/newsletter-bg.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    .newsLetter-content {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+        h3{ 
+            opacity: 0.7;
+            text-transform: uppercase;
+        }
+        span {
+            text-transform: uppercase;
+            font-size: 16px;
+            @include md {
+                font-size: 25px;
+            }
+        }
+        .input-section {
+            // align-items: center;
+            flex-direction: row;
+            text-align: center;
+            input, button{
+                padding: 4px 10px;
+                font-size: 14px;
+                @include md {
+                    font-size: 22px;
+                    padding: 5px 10px;
+                }
+            }
+            button {
+                cursor: pointer;
+                background-color: #8e2de2;
+                color: white;
+            }
+        }
+        p {
+            font-size: 12px;
+            opacity: 0.6;
+            @include md {
+                font-size: 16px;
+            }
+
+        }
+        .social-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            .fa {
+                background-color: rgba(0,0,0,0.8);
+                border-radius: 5px;
+                padding: 4px;
+                color: #ffffff;
+                font-size: 20px;
+                cursor: pointer;
+                @include md {
+                    font-size: 25px;
+                }
+                @include lg {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
