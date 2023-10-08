@@ -11,6 +11,7 @@ import "./Header.scss";
 
 const Header = () => {
     const [scroll,setScroll] = useState(true);
+    const [showCart, setShowCart] = useState(false);
 
     const handleScroll = () => {
         const offSet = window.screenY;
@@ -20,12 +21,16 @@ const Header = () => {
             setScroll(true)
         }
     }
+    // 
+   
 
     useEffect(() => {
         window.addEventListener("scroll",handleScroll)
     },[]);
 
-    return <header className={`main-container ${scroll ? 'sticky-header': ""}`}>
+    return (
+    <>
+     <header className={`main-container ${scroll ? 'sticky-header': ""}`}>
         <div className="header-container">
             <div className="center">E-Commerce-Web</div>
             <ul className="left">
@@ -37,12 +42,15 @@ const Header = () => {
                 <TbSearch />
                 <AiOutlineHeart />
                 <span className="cart-icon">
-                    <CgShoppingCart />
+                    <CgShoppingCart onClick={() => setShowCart(true)}/>
                     <span>3</span>
                 </span>
             </div>
         </div>
-    </header>;
+      </header>
+      {showCart && <Cart setShowCart={setShowCart} onClick={() => setShowCart(false)} />}
+    </>
+    )
 };
 
 export default Header;
