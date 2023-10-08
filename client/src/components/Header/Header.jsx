@@ -12,6 +12,7 @@ import "./Header.scss";
 const Header = () => {
     const [scroll,setScroll] = useState(true);
     const [showCart, setShowCart] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
 
     const handleScroll = () => {
         const offSet = window.screenY;
@@ -39,7 +40,7 @@ const Header = () => {
                 <li>Category</li>
             </ul>
             <div className="right">
-                <TbSearch />
+                <TbSearch onClick={() => setShowSearch(true)} />
                 <AiOutlineHeart />
                 <span className="cart-icon">
                     <CgShoppingCart onClick={() => setShowCart(true)}/>
@@ -49,6 +50,7 @@ const Header = () => {
         </div>
       </header>
       {showCart && <Cart setShowCart={setShowCart} onClick={() => setShowCart(false)} />}
+       {showSearch && <Search setShowSearch={setShowSearch} />}
     </>
     )
 };
