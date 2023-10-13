@@ -6,7 +6,7 @@ import SingleProduct from "./components/SingleProduct/SingleProduct.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
 import Newsleter from "./components/Footer/Newsletter/Newsletter.jsx";
-import AppContext from "./utils/AppContext.jsx";
+import AppContext from "./utils/Context.js";
 
 function App() {
   return (

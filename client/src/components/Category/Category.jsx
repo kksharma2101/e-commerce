@@ -1,15 +1,15 @@
 import "./Category.scss";
 import Products from "../Products/Products.jsx"
-import cart1 from '../../assets/category/cat-1.jpg'
+// import cart1 from '../../assets/category/cat-1.jpg'
 
 const Category = () => {
     return (
-    <div className="category-main-content">
-        <div className="layout">
-               <div className="title">Category title</div>
-               <Products innerPage={true} />
-        </div>
-    </div>)
+        <div className="category-main-content">
+            <div className="layout">
+                <div className="title">Category title</div>
+                <Products innerPage={true} />
+            </div>
+        </div>)
 
 };
 
